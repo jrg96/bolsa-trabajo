@@ -4,4 +4,60 @@
   <artifactId>bolsa-trabajo</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>bolsa-trabajo</name>
+  
+  <dependencies>
+ 	<dependency>
+ 		<groupId>org.springframework</groupId>
+ 		<artifactId>spring-webmvc</artifactId>
+ 		<version>5.2.2.RELEASE</version>	
+ 	</dependency>
+ 	
+ 	<dependency>
+ 		<groupId>jstl</groupId>
+ 		<artifactId>jstl</artifactId>
+ 		<version>1.2</version>	
+ 	</dependency>
+ 	
+ 	<dependency>
+ 		<groupId>org.springframework.data</groupId>
+ 		<artifactId>spring-data-jpa</artifactId>
+ 		<version>2.2.3.RELEASE</version>	
+ 	</dependency>
+ 	
+ 	<dependency>
+    	<groupId>org.hibernate</groupId>
+    	<artifactId>hibernate-core</artifactId>
+    	<version>5.4.10.Final</version>
+	</dependency>
+	
+    <dependency>
+  		<groupId>org.hibernate.validator</groupId>
+  		<artifactId>hibernate-validator</artifactId>
+  		<version>[6.1.0,)</version>
+	</dependency>
+	
+	<dependency>
+    	<groupId>com.oracle.ojdbc</groupId>
+    	<artifactId>ojdbc8</artifactId>
+    	<version>19.3.0.0</version>
+	</dependency>
+	
+	<dependency>
+    	<groupId>org.springframework.security</groupId>
+    	<artifactId>spring-security-web</artifactId>
+    	<version>5.2.1.RELEASE</version>
+	</dependency>
+	
+	<dependency>
+    	<groupId>org.springframework.security</groupId>
+    	<artifactId>spring-security-config</artifactId>
+    	<version>5.2.1.RELEASE</version>
+	</dependency>
+	
+	<dependency>
+    	<groupId>org.springframework.security</groupId>
+    	<artifactId>spring-security-taglibs</artifactId>
+    	<version>5.2.1.RELEASE</version>
+	</dependency>
+  </dependencies>
 </project>
