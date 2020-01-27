@@ -1,13 +1,20 @@
 package com.empresa.app.model;
 
 import java.util.Date;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name = "Usuarios")
@@ -35,6 +42,20 @@ public class Usuario
 	
 	@Column(name = "fecharegistro")
 	private Date fechaRegistro;
+	
+	
+	/*
+	 * - We don't attach PERSIST because Perfil has to be created first in order to be
+	 *   associated to an Usuario, not in the moment
+	 *   
+	 * - We don't attach REMOVE because if Usuario gets deleted, Perfil must not be deleted
+	 * */
+	@ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.DETACH,
+													CascadeType.MERGE, CascadeType.REFRESH})
+    @JoinTable(name = "usuarioperfil", joinColumns = {
+            @JoinColumn(name = "idusuario") }, inverseJoinColumns = {
+            @JoinColumn(name = "idperfil") })
+	private Set<Perfil> perfiles;
 	
 	
 	public int getId() {
@@ -81,9 +102,17 @@ public class Usuario
 	}
 	
 	
+	public Set<Perfil> getPerfiles() {
+		return perfiles;
+	}
+	public void setPerfiles(Set<Perfil> perfiles) {
+		this.perfiles = perfiles;
+	}
+	
 	@Override
 	public String toString() {
 		return "Usuario [id=" + id + ", nombre=" + nombre + ", email=" + email + ", username=" + username
-				+ ", password=" + password + ", estatus=" + estatus + ", fechaRegistro=" + fechaRegistro + "]";
+				+ ", password=" + password + ", estatus=" + estatus + ", fechaRegistro=" + fechaRegistro + ", perfiles="
+				+ perfiles + "]";
 	}
 }
