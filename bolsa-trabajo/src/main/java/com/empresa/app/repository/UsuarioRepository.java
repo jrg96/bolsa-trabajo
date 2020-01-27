@@ -8,5 +8,5 @@ import com.empresa.app.model.Usuario;
 @Repository(value = "usuarioRepository")
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer> 
 {
-
+	Usuario findByUsername(String username);
 }
