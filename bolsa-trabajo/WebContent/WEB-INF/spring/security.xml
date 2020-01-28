@@ -11,6 +11,7 @@
    <http auto-config="true" >
    		<intercept-url pattern="/categorias/*" access="hasAnyAuthority('ROLE_ADMINISTRADOR')" />
    		<intercept-url pattern="/users/*" access="hasAnyAuthority('ROLE_ADMINISTRADOR')" />
+   		<intercept-url pattern="/vacantes/*" access="hasAnyAuthority('ROLE_ADMINISTRADOR')" />
    		
    		<form-login login-page="/user/login" default-target-url="/" />
    </http>

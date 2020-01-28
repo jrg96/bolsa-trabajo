@@ -10,4 +10,5 @@ public interface IVacanteService
 	public void eliminarVacante(int id);
 	public Vacante obtenerVacante(int id);
 	public List<Vacante> obtenerTodas();
+	public List<String> obtenerEstados();
 }

@@ -1,5 +1,6 @@
 package com.empresa.app.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,6 +16,16 @@ public class VacanteServiceJpa implements IVacanteService
 {
 	@Autowired
 	private VacanteRepository vacanteRepository;
+	
+	private ArrayList<String> estados;
+	
+	public VacanteServiceJpa() 
+	{
+		this.estados = new ArrayList<>();
+		estados.add("Creada");
+		estados.add("Aprobada");
+		estados.add("Eliminada");
+	}
 
 	
 	@Override
@@ -49,6 +60,12 @@ public class VacanteServiceJpa implements IVacanteService
 	public List<Vacante> obtenerTodas() 
 	{
 		return this.vacanteRepository.findAll();
+	}
+
+	@Override
+	public List<String> obtenerEstados() 
+	{
+		return this.estados;
 	}
 
 }
