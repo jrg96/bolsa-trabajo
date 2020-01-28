@@ -8,5 +8,6 @@ import com.empresa.app.model.Perfil;
 @Repository(value = "perfilRepository")
 public interface PerfilRepository extends JpaRepository<Perfil, Integer> 
 {
-	
+	// Funcion propia para buscar por nombre de perfil
+	Perfil findByPerfil(String perfil);
 }

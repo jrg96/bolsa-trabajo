@@ -38,7 +38,7 @@ public class Usuario
 	private String password;
 	
 	@Column(name = "estatus")
-	private int estatus;
+	private int estatus = 1;
 	
 	@Column(name = "fecharegistro")
 	private Date fechaRegistro;

@@ -1,6 +1,7 @@
 package com.empresa.app.service;
 
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,9 +14,10 @@ import org.springframework.stereotype.Service;
 
 import com.empresa.app.model.Usuario;
 import com.empresa.app.repository.UsuarioRepository;
+import com.empresa.app.service.interf.IUsuarioService;
 
 @Service(value = "usuarioServiceJpa")
-public class UsuarioServiceJpa implements UserDetailsService
+public class UsuarioServiceJpa implements UserDetailsService, IUsuarioService
 {
 	@Autowired
 	private UsuarioRepository usuarioRepository;
@@ -41,6 +43,25 @@ public class UsuarioServiceJpa implements UserDetailsService
 		});
 		
 		return authorities;
+	}
+
+	@Override
+	public void guardarUsuario(Usuario usuario) 
+	{
+		usuarioRepository.save(usuario);
+	}
+
+	@Override
+	public Usuario obtenerUsuario(int id) 
+	{
+		Optional<Usuario> usuario = usuarioRepository.findById(id);
+		
+		if (usuario.isPresent())
+		{
+			return usuario.get();
+		}
+		
+		return null;
 	}
 	
 }

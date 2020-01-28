@@ -4,7 +4,7 @@
     <footer class="footer">
       <div class="container">
         <p>
-          &copy; 2019 EmpleosApp, Inc. | WebApp Desarrollada con Spring Boot 2.1.2 | Autor: Jorge Gomez | &middot; <a href="#">Privacy</a>
+          &copy; 2019 EmpleosApp, Inc. | WebApp Desarrollada con Spring MVC 5| Autor: Jorge Gomez | &middot; <a href="#">Privacy</a>
           &middot; <a href="#">Terms</a>
         </p>
       </div>
