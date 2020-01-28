@@ -70,5 +70,14 @@ public class UsuarioServiceJpa implements UserDetailsService, IUsuarioService
 	{
 		return this.usuarioRepository.findAll();
 	}
+
+	@Override
+	public void eliminarUsuario(int id) 
+	{
+		if (this.usuarioRepository.existsById(id))
+		{
+			this.usuarioRepository.deleteById(id);
+		}
+	}
 	
 }

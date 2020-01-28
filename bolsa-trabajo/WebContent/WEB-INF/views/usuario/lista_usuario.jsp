@@ -38,6 +38,13 @@
     <main role="main">     
       <hr>
       <div class="container"> 
+      	<!-- INICIO DESPLIEGUE MENSAJES -->
+		<c:if test="${mensaje != null}">
+			<div class="alert alert-success" role="alert">
+				${mensaje}
+			</div>
+		</c:if>
+		<!-- FIN DESPLIEGUE MENSAJES -->
 
         <div class="card">
           <h4 class="card-header"><strong>Listado de Usuarios</strong></h4>              
@@ -70,9 +77,9 @@
 	                  	</c:choose>
 	                  </td>
 	                  <td>
-	                    <a href="#" onclick="return confirm('¿Estas seguro?')" class="btn btn-success btn-sm" role="button" title="Eliminar el registro."><i class="fas fa-trash" aria-hidden="true"></i></a>
-	                    <a href="#" onclick="return confirm('¿Quiere bloquear el acceso al usuario?')" class="btn btn-success btn-sm" role="button" title="Bloquear el acceso al sistema para este usuario."><i class="fas fa-lock" aria-hidden="true"></i></a>	
-	                    <a href="#" onclick="return confirm('¿Desea desbloquear el usuario?')" class="btn btn-success btn-sm" role="button" title="Permitir el acceso al sistema a este usuario."><i class="fas fa-unlock" aria-hidden="true"></i></a>
+	                    <a href="${urlRoot}users/delete/${usuario.id}" onclick="return confirm('¿Estas seguro?')" class="btn btn-success btn-sm" role="button" title="Eliminar el registro."><i class="fas fa-trash" aria-hidden="true"></i></a>
+	                    <a href="${urlRoot}users/state/${usuario.id}/0" onclick="return confirm('¿Quiere bloquear el acceso al usuario?')" class="btn btn-success btn-sm" role="button" title="Bloquear el acceso al sistema para este usuario."><i class="fas fa-lock" aria-hidden="true"></i></a>	
+	                    <a href="${urlRoot}users/state/${usuario.id}/1" onclick="return confirm('¿Desea desbloquear el usuario?')" class="btn btn-success btn-sm" role="button" title="Permitir el acceso al sistema a este usuario."><i class="fas fa-unlock" aria-hidden="true"></i></a>
 	                  </td>
 	                </tr>
                 </c:forEach>                          

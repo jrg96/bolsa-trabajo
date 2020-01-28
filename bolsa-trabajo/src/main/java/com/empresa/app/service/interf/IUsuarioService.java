@@ -9,4 +9,5 @@ public interface IUsuarioService
 	public void guardarUsuario(Usuario usuario);
 	public Usuario obtenerUsuario(int id);
 	public List<Usuario> obtenerTodos();
+	public void eliminarUsuario(int id);
 }
