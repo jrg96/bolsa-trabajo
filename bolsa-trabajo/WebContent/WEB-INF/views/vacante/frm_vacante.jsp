@@ -53,6 +53,9 @@
           <h4 class="card-header"><strong>Datos de la oferta de trabajo</strong></h4>              
           <div class="card-body">
             <form:form modelAttribute="vacante" action="${urlRoot}vacantes/save" method="POST" enctype="multipart/form-data">              
+              <form:hidden path="id" />
+              <form:hidden path="imagen" />
+              
               <div class="row">
                 <div class="col-md-3"> 
                   <div class="form-group">

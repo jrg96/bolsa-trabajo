@@ -81,8 +81,8 @@
 	                  	</c:choose>
 	                  </td>
 	                  <td>
-	                    <a href="#" class="btn btn-success btn-sm" role="button" title="Editar el registro."><i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
-	                    <a href="#" onclick="return confirm('¿Estas seguro?')" class="btn btn-success btn-sm" role="button" title="Eliminar el registro."><i class="fas fa-trash" aria-hidden="true"></i></a>
+	                    <a href="${urlRoot}vacantes/edit/${vacante.id}" class="btn btn-success btn-sm" role="button" title="Editar el registro."><i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
+	                    <a href="${urlRoot}vacantes/delete/${vacante.id}" onclick="return confirm('¿Estas seguro?')" class="btn btn-success btn-sm" role="button" title="Eliminar el registro."><i class="fas fa-trash" aria-hidden="true"></i></a>
 	                  </td>
 	                </tr>
                 </c:forEach>

@@ -14,6 +14,7 @@ import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -92,6 +93,25 @@ public class VacanteController
 		vacanteService.guardarVacante(vacante);
 		
 		attributes.addFlashAttribute("mensaje", "Vacante creada con exito");
+		return "redirect:/vacantes/index";
+	}
+	
+	@RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
+	public String modificarVacante(@PathVariable("id") int id, Model model)
+	{
+		model.addAttribute("vacante", this.vacanteService.obtenerVacante(id));
+		model.addAttribute("lista_categorias", this.categoriaService.obtenerTodos());
+		model.addAttribute("lista_estados", this.vacanteService.obtenerEstados());
+		
+		return "vacante/frm_vacante";
+	}
+	
+	@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+	public String eliminarVacante(@PathVariable("id") int id, RedirectAttributes attributes)
+	{
+		this.vacanteService.eliminarVacante(id);
+		attributes.addFlashAttribute("mensaje", "Vacante eliminada con exito");
+		
 		return "redirect:/vacantes/index";
 	}
 	

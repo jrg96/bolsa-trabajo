@@ -53,8 +53,7 @@ public class Vacante
 	 * 
 	 * - We don't use REMOVE because a Vacante can be removed, but Categoria must remain
 	 * */
-	@ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.DETACH,
-												   CascadeType.MERGE, CascadeType.REFRESH})
+	@ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.DETACH, CascadeType.REFRESH})
 	@JoinColumn(name = "idcategoria")
 	private Categoria categoria;
 	
