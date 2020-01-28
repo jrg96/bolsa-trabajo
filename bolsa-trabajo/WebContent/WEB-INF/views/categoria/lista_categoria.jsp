@@ -41,7 +41,7 @@
         <div class="card">
           <h4 class="card-header"><strong>Listado de Categorías</strong></h4>              
           <div class="card-body">
-            <a class="btn btn-primary" href="#" role="button"><i class="fas fa-file" aria-hidden="true"></i> Nueva</a>            
+            <a class="btn btn-primary" href="${urlRoot}categorias/create" role="button"><i class="fas fa-file" aria-hidden="true"></i> Nueva</a>            
             <hr>
             <table class="table table-hover">
               <thead class="thead-light">
