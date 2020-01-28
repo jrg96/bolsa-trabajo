@@ -9,7 +9,7 @@
      http://www.springframework.org/schema/security/spring-security.xsd">
 
    <http auto-config="true" >
-   		<!-- <intercept-url pattern="/peliculas/*" access="hasAnyAuthority('EDITOR', 'GERENTE')" /> -->
+   		<intercept-url pattern="/categorias/*" access="hasAnyAuthority('ROLE_ADMINISTRADOR')" />
    		
    		<form-login login-page="/user/login" default-target-url="/" />
    </http>
