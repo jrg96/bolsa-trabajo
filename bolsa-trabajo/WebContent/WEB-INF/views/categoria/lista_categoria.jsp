@@ -37,6 +37,13 @@
     <main role="main">     
       <hr>
       <div class="container"> 
+		<!-- INICIO DESPLIEGUE MENSAJES -->
+		<c:if test="${mensaje != null}">
+			<div class="alert alert-success" role="alert">
+				${mensaje}
+			</div>
+		</c:if>
+		<!-- FIN DESPLIEGUE MENSAJES -->
 
         <div class="card">
           <h4 class="card-header"><strong>Listado de Categorías</strong></h4>              
@@ -59,7 +66,7 @@
 	                  <td>${categoria.nombre}</td>
 	                  <td>${categoria.descripcion}</td>
 	                  <td>
-	                    <a href="#" class="btn btn-success btn-sm" role="button" title="Editar"><i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
+	                    <a href="${urlRoot}categorias/edit/${categoria.id}" class="btn btn-success btn-sm" role="button" title="Editar"><i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
 	                    <a href="#" onclick="return confirm('¿Estas seguro?')" class="btn btn-success btn-sm" role="button" title="Eliminar"><i class="fas fa-trash" aria-hidden="true"></i></a>
 	                  </td>
 	                </tr>

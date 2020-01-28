@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -61,6 +62,13 @@ public class CategoriaController
 		this.categoriaService.guardarCategoria(categoria);
 		attributes.addFlashAttribute("mensaje", "Categoria agregada con exito");
 		
-		return "redirect:/categorias/create";
+		return "redirect:/categorias/index";
+	}
+	
+	@RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
+	public String modificarCategoria(@PathVariable int id, Model model)
+	{
+		model.addAttribute("categoria", this.categoriaService.obtenerCategoria(id));
+		return "categoria/frm_categoria";
 	}
 }

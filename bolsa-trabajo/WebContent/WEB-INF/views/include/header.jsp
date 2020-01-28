@@ -18,15 +18,15 @@
               <a class="nav-link active" href="${urlRoot}">Inicio</a>
             </li>
             
-            <sec:authorize access="hasAnyAuthority('ROLE_USUARIO')" >
-	            <li class="nav-item">
-	              <a class="nav-link" href="${urlRoot}user/logout">Cerrar sesión</a>
-	            </li>
-            </sec:authorize>
-            
             <sec:authorize access="hasAnyAuthority('ROLE_ADMINISTRADOR')" >
 	            <li class="nav-item">
 	              <a class="nav-link" href="${urlRoot}categorias/index">Categorias</a>
+	            </li>
+            </sec:authorize>
+            
+            <sec:authorize access="hasAnyAuthority('ROLE_USUARIO, ROLE_ADMINISTRADOR')" >
+	            <li class="nav-item">
+	              <a class="nav-link" href="${urlRoot}user/logout">Cerrar sesión</a>
 	            </li>
             </sec:authorize>          
           </ul>

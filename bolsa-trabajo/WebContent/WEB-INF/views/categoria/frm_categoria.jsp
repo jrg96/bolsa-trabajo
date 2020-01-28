@@ -52,6 +52,8 @@
           <h4 class="card-header"><strong>Datos de la categoría</strong></h4>              
           <div class="card-body">
             <form:form modelAttribute="categoria" action="${urlRoot}categorias/save" method="POST">              
+              <form:hidden path="id" />
+              
               <div class="row">
                 <div class="col-md-6"> 
                   <div class="form-group">
