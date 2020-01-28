@@ -37,6 +37,14 @@
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
         <div class="container">
+        	<!-- INICIO DESPLIEGUE MENSAJES -->
+	    	<c:if test="${mensaje != null}">
+	    		<div class="alert alert-success" role="alert">
+	  				${mensaje}
+	  			</div>
+	    	</c:if>
+	    	<!-- FIN DESPLIEGUE MENSAJES -->
+        
           <h3>Encuentra el trabajo que andas buscando.</h3>
           Puedes buscar por descripción y categoría.
           <form class="form-inline">

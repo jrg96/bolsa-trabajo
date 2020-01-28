@@ -80,6 +80,8 @@ public class RegistroController
 		usuario.setFechaRegistro(new Date());
 		this.usuarioService.guardarUsuario(usuario);
 		
-		return "registro/frm_registro";
+		attributes.addFlashAttribute("mensaje", "Usuario creado con exito, por favor inicie sesión");
+		
+		return "redirect:/";
 	}
 }

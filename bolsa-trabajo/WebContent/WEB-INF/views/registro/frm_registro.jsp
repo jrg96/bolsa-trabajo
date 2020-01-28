@@ -35,6 +35,18 @@
     <main role="main">     
       <hr>
       <div class="container"> 
+      	<!-- INICIO DESPLIEGUE DE ERRORES BINDING -->
+	      <spring:hasBindErrors name="usuario">
+	          <div class="alert alert-danger" role="alert">
+	      	      Por favor corrija los siguientes errores:
+	      	      <ul>
+	      	      	  <c:forEach var="error" items="${errors.allErrors}">
+	      	      	      <li><spring:message message="${error}" /></li>
+	      	      	  </c:forEach>
+	      	      </ul>
+	      	  </div>
+	      </spring:hasBindErrors>
+	      <!-- FIN DESPLIEGUE DE ERRORES BINDING -->
 
         <div class="card">
           <h4 class="card-header"><strong>Formulario de registro</strong></h4>              
