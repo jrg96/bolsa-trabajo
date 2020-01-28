@@ -1,6 +1,7 @@
 package com.empresa.app.service;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -62,6 +63,12 @@ public class UsuarioServiceJpa implements UserDetailsService, IUsuarioService
 		}
 		
 		return null;
+	}
+
+	@Override
+	public List<Usuario> obtenerTodos() 
+	{
+		return this.usuarioRepository.findAll();
 	}
 	
 }
