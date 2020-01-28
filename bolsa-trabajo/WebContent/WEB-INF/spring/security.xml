@@ -11,7 +11,7 @@
    <http auto-config="true" >
    		<!-- <intercept-url pattern="/peliculas/*" access="hasAnyAuthority('EDITOR', 'GERENTE')" /> -->
    		
-   		<form-login login-page="/admin/loginform" default-target-url="/admin/index" />
+   		<form-login login-page="/user/login" default-target-url="/" />
    </http>
 
    <authentication-manager>
