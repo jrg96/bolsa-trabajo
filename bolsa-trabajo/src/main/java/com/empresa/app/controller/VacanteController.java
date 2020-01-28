@@ -36,9 +36,10 @@ public class VacanteController
 	private IVacanteService vacanteService;
 	
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
-	public String listaVacantes()
+	public String listaVacantes(Model model)
 	{
-		return "";
+		model.addAttribute("lista_vacantes", this.vacanteService.obtenerTodas());
+		return "vacante/lista_vacante";
 	}
 	
 	
@@ -90,7 +91,8 @@ public class VacanteController
 		// Procedemos a realizar el guardado
 		vacanteService.guardarVacante(vacante);
 		
-		return "vacante/frm_vacante";
+		attributes.addFlashAttribute("mensaje", "Vacante creada con exito");
+		return "redirect:/vacantes/index";
 	}
 	
 	

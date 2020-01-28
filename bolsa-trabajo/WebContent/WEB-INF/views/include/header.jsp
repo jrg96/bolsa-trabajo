@@ -25,6 +25,9 @@
 	            <li class="nav-item">
 	              <a class="nav-link" href="${urlRoot}users/index">Usuarios</a>
 	            </li>
+	            <li class="nav-item">
+	              <a class="nav-link" href="${urlRoot}vacantes/index">Vacantes</a>
+	            </li>
             </sec:authorize>
             
             <sec:authorize access="hasAnyAuthority('ROLE_USUARIO, ROLE_ADMINISTRADOR')" >
