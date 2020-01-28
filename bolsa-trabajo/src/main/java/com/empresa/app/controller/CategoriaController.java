@@ -66,9 +66,17 @@ public class CategoriaController
 	}
 	
 	@RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
-	public String modificarCategoria(@PathVariable int id, Model model)
+	public String modificarCategoria(@PathVariable("id") int id, Model model)
 	{
 		model.addAttribute("categoria", this.categoriaService.obtenerCategoria(id));
 		return "categoria/frm_categoria";
+	}
+	
+	@RequestMapping(value = "/delete/{id}")
+	public String eliminarCategoria(@PathVariable("id") int id, RedirectAttributes attributes)
+	{
+		this.categoriaService.eliminarCategoria(id);
+		attributes.addFlashAttribute("mensaje", "Categoria eliminada con exito");
+		return "redirect:/categorias/index";
 	}
 }

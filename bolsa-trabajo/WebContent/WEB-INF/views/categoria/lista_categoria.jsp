@@ -67,7 +67,7 @@
 	                  <td>${categoria.descripcion}</td>
 	                  <td>
 	                    <a href="${urlRoot}categorias/edit/${categoria.id}" class="btn btn-success btn-sm" role="button" title="Editar"><i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
-	                    <a href="#" onclick="return confirm('¿Estas seguro?')" class="btn btn-success btn-sm" role="button" title="Eliminar"><i class="fas fa-trash" aria-hidden="true"></i></a>
+	                    <a href="${urlRoot}categorias/delete/${categoria.id}" onclick="return confirm('¿Estas seguro?')" class="btn btn-success btn-sm" role="button" title="Eliminar"><i class="fas fa-trash" aria-hidden="true"></i></a>
 	                  </td>
 	                </tr>
               	</c:forEach>                
